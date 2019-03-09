@@ -11,7 +11,7 @@ client.on('ready', () => {
 
 client.on('message', (msg) => {
   if (msg.content === 'elo') {
-    msg.channel.send(`Elo ${msg.author} mordo! Ile potrzebujesz?`);
+    msg.channel.send(`Elo ${msg.author}! Mordo ile potrzebujesz?`);
   }
 
   if (msg.content === 'cwel') {
