@@ -6,7 +6,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
   console.log('Bot is now connected');
 
-  // client.channels.find(x => x.name === 'lubie-sranie-po-ataku').send('Wreszcie na wolnosci! // Misiek BOT 0.1 connected');
+  client.channels.find(x => x.name === 'lubie-sranie-po-ataku').send('Wreszcie na wolnosci! // Misiek BOT 0.1 connected');
 });
 
 client.on('message', (msg) => {
