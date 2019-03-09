@@ -21,8 +21,9 @@ client.on('message', (msg) => {
   }
 
   if (msg.content === 'kolor') {
-    msg.channel.send(`${msg.author}, klekaj do miecza`);
-    client.user.setGame('Zabka');
+    msg.channel.send(`Debowe i 200mil`);
+    client.user.setGame('Lubelska Grejfrutowka');
+    bot.user.setUsername("!!Romski Wirazka!!");
   }
 });
 
