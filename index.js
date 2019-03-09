@@ -23,7 +23,7 @@ client.on('message', (msg) => {
   if (msg.content === 'kolor') {
     msg.channel.send(`Debowe i 200mil`);
     client.user.setGame('Lubelska Grejfrutowka');
-    bot.user.setUsername("!!Romski Wirazka!!");
+    client.user.setUsername("!!Romski Wirazka!!");
   }
 });
 
