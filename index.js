@@ -6,6 +6,7 @@ const config = require("./config.json");
 
 client.on('ready', () => {
   console.log('Bot is now connected');
+  bot.user.setUsername("MyNewUsername");
   client.user.setGame('Quake 1');
 
   client.channels.find(x => x.name === 'general').send('Wreszcie na wolnosci! // Misiek BOT 0.1 connected');
@@ -35,7 +36,7 @@ client.on('guildMemberAdd', member => {
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
   // Send the message, mentioning the member
-  channel.send(`Witaj na rejonie ${member}! Badz elegancki mordo`);
+  channel.send(`Witaj na rejonie ${member}! Zeby zawsze sie farcilo mordo`);
 });
 
 client.on('message', msg => {
