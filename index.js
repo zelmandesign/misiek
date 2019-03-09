@@ -33,7 +33,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('message', msg => {
   if (msg.channel.type == "dm") {
-    msg.author.send("You are DMing me now!");
+    msg.author.send(`${msg.author} szukasz chuja do dupy?`);
     return;
   }
 });
