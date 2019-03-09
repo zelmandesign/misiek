@@ -4,6 +4,9 @@ const client = new Discord.Client();
 
 const config = require("./config.json");
 
+client.login(config.token);
+
+
 client.on('ready', () => {
   console.log('Bot is now connected');
 
