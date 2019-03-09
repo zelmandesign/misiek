@@ -26,6 +26,11 @@ client.on('message', (msg) => {
     msg.channel.send(`Debowe i 200mil`);
     client.user.setGame('Lubelska Grejfrutowka');
   }
+
+  if (msg.content === '200') {
+    msg.channel.send(`za malo`);
+    client.user.setGame('Lubelska Grejfrutowka');
+  }
 });
 
 // Create an event listener for new guild members
