@@ -22,8 +22,7 @@ client.on('message', (msg) => {
 
   if (msg.content === 'kolor') {
     msg.channel.send(`${msg.author}, klekaj do miecza`);
-    client.user.setGame('Quake 1');
-    client.user.setName('Quake 1');
+    client.user.setGame('Zabka');
   }
 });
 
