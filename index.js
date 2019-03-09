@@ -31,4 +31,11 @@ client.on('guildMemberAdd', member => {
   channel.send(`Witaj na rejonie ${member}! Badz elegancki mordo`);
 });
 
+client.on('message', msg => {
+  if (msg.channel.type == "dm") {
+    msg.author.send("You are DMing me now!");
+    return;
+  }
+});
+
 client.login(config.token);
