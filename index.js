@@ -8,7 +8,7 @@ client.on('ready', () => {
   console.log('Bot is now connected');
   client.user.setGame('Quake 1');
 
-  client.channels.find(x => x.name === 'lubie-sranie-po-ataku').send('Wreszcie na wolnosci! // Misiek BOT 0.1 connected');
+  client.channels.find(x => x.name === 'general').send('Wreszcie na wolnosci! // Misiek BOT 0.1 connected');
 });
 
 client.on('message', (msg) => {
@@ -18,6 +18,12 @@ client.on('message', (msg) => {
 
   if (msg.content === 'cwel') {
     msg.channel.send(`${msg.author}, klekaj do miecza`);
+  }
+
+  if (msg.content === 'kolor') {
+    msg.channel.send(`${msg.author}, klekaj do miecza`);
+    client.user.setGame('Quake 1');
+    client.user.setName('Quake 1');
   }
 });
 
