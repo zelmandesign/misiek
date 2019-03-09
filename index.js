@@ -6,7 +6,7 @@ const config = require("./config.json");
 
 client.on('ready', () => {
   console.log('Bot is now connected');
-  bot.user.setUsername("MyNewUsername");
+  bot.user.setUsername('MyNewUsername');
   client.user.setGame('Quake 1');
 
   client.channels.find(x => x.name === 'general').send('Wreszcie na wolnosci! // Misiek BOT 0.1 connected');
