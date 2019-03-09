@@ -14,10 +14,12 @@ client.on('ready', () => {
 client.on('message', (msg) => {
   if (msg.content === 'elo') {
     msg.channel.send(`Elo ${msg.author}! Mordo ile potrzebujesz?`);
+    client.user.setGame('Quake 1');
   }
 
   if (msg.content === 'cwel') {
     msg.channel.send(`${msg.author}, klekaj do miecza`);
+    client.user.setGame('Quake 1');
   }
 
   if (msg.content === 'kolor') {
