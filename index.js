@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
-const token = 'NTUzMjk5OTYxODAyOTE1ODUw.D2VqIQ.YGO_oiwVm2vKtRc788FiPVObhYQ';
 
 const client = new Discord.Client();
+
+const config = require("./config.json");
 
 client.on('ready', () => {
   console.log('Bot is now connected');
@@ -26,7 +27,7 @@ client.on('guildMemberAdd', member => {
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
   // Send the message, mentioning the member
-  channel.send(`Witaj na rejonie! Ej, ${member} pamietaj badz elegancki mordo`);
+  channel.send(`Witaj na rejonie ${member}! Badz elegancki mordo`);
 });
 
 client.login(token);
