@@ -4,9 +4,6 @@ const client = new Discord.Client();
 
 const config = require("./config.json");
 
-client.login(config.token);
-
-
 client.on('ready', () => {
   console.log('Bot is now connected');
 
@@ -33,4 +30,4 @@ client.on('guildMemberAdd', member => {
   channel.send(`Witaj na rejonie ${member}! Badz elegancki mordo`);
 });
 
-client.login(token);
+client.login(config.token);
