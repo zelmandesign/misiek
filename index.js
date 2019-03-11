@@ -31,6 +31,11 @@ client.on('message', (msg) => {
     msg.channel.send(`za malo`);
     client.user.setGame('Lubelska Grejfrutowka');
   }
+
+  if (msg.content === '300') {
+    msg.channel.send(`za malo`);
+    bot.user.setUsername("MyNewUsername");
+  }
 });
 
 // Create an event listener for new guild members
