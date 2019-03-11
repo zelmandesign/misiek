@@ -37,7 +37,7 @@ client.on('message', (msg) => {
   }
 
   if (msg.content === 'tarkov') {
-    msg.channel.send(`${msg.author} mordo mam za duze lagi a przyjebie`);
+    msg.channel.send(`${msg.author} mordo mam za duze lagi ale przyjebie`);
     client.user.setUsername("Misiek z Tarkova");
     client.user.setGame('Ucieczka z Tarkova');
   }
