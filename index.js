@@ -34,7 +34,7 @@ client.on('message', (msg) => {
 
   if (msg.content === '300') {
     msg.channel.send(`za malo`);
-    bot.user.setUsername("MyNewUsername");
+    client.user.setUsername("MyNewUsername");
   }
 });
 
