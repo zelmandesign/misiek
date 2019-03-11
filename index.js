@@ -13,29 +13,35 @@ client.on('ready', () => {
 
 client.on('message', (msg) => {
   if (msg.content === 'elo') {
-    msg.channel.send(`Elo ${msg.author}! Mordo ile potrzebujesz?`);
+    msg.channel.send(`Elo ${msg.author}! Mordo czego potrzebujesz?`);
+    client.user.setUsername("Misiek z Nadarzyna");
     client.user.setGame('Quake 1');
+  }
+
+  if (msg.content === '200') {
+    msg.channel.send(`${msg.author} za malo. Idz do zabki po wiecej`);
+    client.user.setUsername("Romski Wirazka");
+    client.user.setGame('Lubelska Wisniowka');
   }
 
   if (msg.content === 'cwel') {
     msg.channel.send(`${msg.author}, klekaj do miecza`);
+    client.user.setUsername("Misiek z Nadarzyna");
     client.user.setGame('Quake 1');
   }
 
   if (msg.content === 'kolor') {
-    msg.channel.send(`Debowe i 200mil`);
+    msg.channel.send(`${msg.author} Piwo po sosnowiecku = Kolor i 200mil?`);
+    client.user.setUsername("Romski Wirazka");
     client.user.setGame('Lubelska Grejfrutowka');
   }
 
-  if (msg.content === '200') {
-    msg.channel.send(`za malo`);
-    client.user.setGame('Lubelska Grejfrutowka');
+  if (msg.content === 'tarkov') {
+    msg.channel.send(`${msg.author} mordo mam za duze lagi a przyjebie`);
+    client.user.setUsername("Misiek z Tarkova");
+    client.user.setGame('Ucieczka z Tarkova');
   }
 
-  if (msg.content === '300') {
-    msg.channel.send(`za malo`);
-    client.user.setUsername("MyNewUsername");
-  }
 });
 
 // Create an event listener for new guild members
