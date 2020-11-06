@@ -27,6 +27,3 @@ client.on('message', message => {
 
 // Here you can login the bot. It automatically attempts to login the bot with the environment variable you set for your bot token (either "CLIENT_TOKEN" or "DISCORD_TOKEN")
 client.login();
-
-//client.login('NTUzMjk5OTYxODAyOTE1ODUw.XIFyvg.bl-f6GyE4_HgeXMmGcio2AWR6LU');
-//client.login(process.env.MISIEKTOKEN);
