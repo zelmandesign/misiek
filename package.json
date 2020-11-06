@@ -1,9 +1,19 @@
 {
-  "name": "Misiek",
-  "version": "1",
+  "name": "misiekbot",
+  "version": "1.0.0",
+  "description": "Misiek z Nadarzyna Discord Bot",
   "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "discord.js": "^11.4.2"
-  }
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zelmandesign/misiek.git"
+  },
+  "author": "Andrzej Zelman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zelmandesign/misiek/issues"
+  },
+  "homepage": "https://github.com/zelmandesign/misiek#readme"
 }
