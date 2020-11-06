@@ -9,6 +9,9 @@ const prefix = process.env.PREFIX;
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setActivity('Doom Eternal', { type: 'PLAYING' });
+
+  //client.channels.find(x => x.name === 'lubie-sranie-po-ataku').send('Wreszcie na wolnosci! // Misiek BOT 0.1 connected');
 });
 
 client.on('message', message => {
