@@ -1,32 +1,72 @@
 const Discord = require('discord.js');
-// Importing this allows you to access the environment variables of the running node process
 require('dotenv').config();
-
 const client = new Discord.Client();
-
-// "process.env" accesses the environment variables for the running node process. PREFIX is the environment variable you defined in your .env file
-const prefix = process.env.PREFIX;
+const prefix = process.env.prefix;
+const bluzgi = require('./bluzgi.json');
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity('Doom Eternal', { type: 'PLAYING' });
+	const welcome = `Nareszcie na wolności ${client.user.tag}!`;
+	console.log(welcome);
+	// test
+	client.channels.cache.get('553991479857643525').send(welcome);
+	// LS
+	// client.channels.cache.get('553217226442932237').send(welcome);
 
-  //client.channels.find(x => x.name === 'lubie-sranie-po-ataku').send('Wreszcie na wolnosci! // Misiek BOT 0.1 connected');
+	const myGames = [
+		'Doom Eternal',
+		'Arma 3',
+		'QuakeWorld',
+		'CPMA',
+		'Diablo 3',
+		'Path of Exile',
+		'Escape From Tarkov',
+	];
+
+	function changeGame() {
+		const randomGame = myGames[Math.floor(Math.random() * myGames.length)];
+		console.log(randomGame);
+		client.user.setActivity(randomGame, { type: 'PLAYING' });
+	}
+	changeGame();
+	setInterval(changeGame, 1800000);
 });
 
 client.on('message', message => {
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  // Here's I'm using one of An Idiot's Guide's basic command handlers. Using the PREFIX environment variable above, I can do the same as the bot token below
-  if (message.author.bot) return;
-  if (message.content.indexOf(prefix.length) !== 0) return;
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
+	const command = args.shift().toLowerCase();
 
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
+	switch(command) {
+	case 'ping':
+		message.channel.send('Pong.');
+		break;
 
-  if (command === 'ping') {
-    message.reply('Pong!');
-  }
+	case 'server':
+		message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+		break;
+
+	case 'user-info':
+		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+		break;
+
+	case 'zbluzgaj':
+		if (!message.mentions.users.size) {
+			return message.reply('musisz wybrać kogoś, zebym go mógł pocisnąć!');
+		}
+		const taggedUser = message.mentions.users.first();
+		const randomoweBluzgi = bluzgi[Math.floor(Math.random() * bluzgi.length)];
+		message.channel.send(`${taggedUser.username} ${randomoweBluzgi.sentence}`);
+		break;
+	}
 });
 
-// Here you can login the bot. It automatically attempts to login the bot with the environment variable you set for your bot token (either "CLIENT_TOKEN" or "DISCORD_TOKEN")
-client.login();
+client.on('message', msg => {
+	if (msg.channel.type == 'dm') {
+		const randomoweBluzgi = bluzgi[Math.floor(Math.random() * bluzgi.length)];
+		msg.author.send(`${msg.author} ${randomoweBluzgi.sentence}`);
+		return;
+	}
+});
+
+client.login(process.env.DISCORD_TOKEN);
