@@ -28,7 +28,7 @@ client.on('ready', () => {
 		client.user.setActivity(randomGame, { type: 'PLAYING' });
 	}
 	changeGame();
-	setInterval(changeGame, 1800000);
+	setInterval(changeGame, 180000);
 });
 
 client.on('message', message => {
@@ -50,7 +50,7 @@ client.on('message', message => {
 		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 		break;
 
-	case 'zbluzgaj':
+	case 'zbluzgaj': {
 		if (!message.mentions.users.size) {
 			return message.reply('musisz wybrać kogoś, zebym go mógł pocisnąć!');
 		}
@@ -59,14 +59,15 @@ client.on('message', message => {
 		message.channel.send(`${taggedUser.username} ${randomoweBluzgi.sentence}`);
 		break;
 	}
-});
-
-client.on('message', msg => {
-	if (msg.channel.type == 'dm') {
-		const randomoweBluzgi = bluzgi[Math.floor(Math.random() * bluzgi.length)];
-		msg.author.send(`${msg.author} ${randomoweBluzgi.sentence}`);
-		return;
 	}
 });
+
+// client.on('message', msg => {
+// 	if (msg.channel.type == 'dm') {
+// 		const randomoweBluzgi_dm = bluzgi[Math.floor(Math.random() * bluzgi.length)];
+// 		msg.author.send(`${msg.author} ${randomoweBluzgi_dm.sentence}`);
+// 		return;
+// 	}
+// });
 
 client.login(process.env.DISCORD_TOKEN);
